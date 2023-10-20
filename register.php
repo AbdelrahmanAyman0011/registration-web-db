@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<form action="contact.php" method="post">
+<form action="contact.php" method="post" onsubmit="return checkPasswords()">
         <div class="container">
             <h1>Register</h1>      
             <label for="name"><b>Name</b></label>
@@ -27,9 +27,25 @@
             <button type="submit" class="registerbtn">Register</button>
         </div>
         <div class="container signin">
-            <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+            <p>Already have an account? <a href="login.php">Sign in</a>.</p>
         </div>
     </form>
+
+
+    <script>
+function checkPasswords() {
+    var password = document.getElementById("password").value;
+    var passwordRepeat = document.getElementById("passwordRepeat").value;
+
+    if (password === passwordRepeat) {
+        return true; // Passwords match, form submission allowed
+    } else {
+        alert("Passwords do not match. Please try again.");
+        return false; // Passwords don't match, prevent form submission
+    }
+}
+</script>
+
 </body>
 
 </html>

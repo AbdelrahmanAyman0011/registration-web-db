@@ -24,9 +24,10 @@
         $name = $_REQUEST['name'];
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
+        $mdpass = md5($password);
 
         // We are going to insert the data into the `sampleDB` table (change to your actual table name)
-        $sql = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
+        $sql = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$mdpass')";
 
         // Check if the query is successful
         if (mysqli_query($conn, $sql)) {
@@ -34,7 +35,7 @@
                 . " Please browse your localhost PHPMyAdmin"
                 . " to view the updated data.</h3>";
 
-            echo nl2br("\nName: $name\nEmail: $email\nPassword: $password\n");
+            echo nl2br("\nName: $name\nEmail: $email\nPassword: $mdpass\n");
         } else {
             echo "ERROR: " . $sql . "<br>" . mysqli_error($conn);
         }

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
 
-    <title>Document</title>
+    <title>login</title>
 </head>
 
 <body>
-    <form action="contact.php" method="post">
+    <form action="check_login.php" method="post">
         
         <div class="container">
             <h1>Login</h1>
