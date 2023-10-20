@@ -34,6 +34,7 @@
             echo "<h3>Data stored in the database successfully."
                 . " Please browse your localhost PHPMyAdmin"
                 . " to view the updated data.</h3>";
+                header("Location: login.php");
 
             echo nl2br("\nName: $name\nEmail: $email\nPassword: $mdpass\n");
         } else {
