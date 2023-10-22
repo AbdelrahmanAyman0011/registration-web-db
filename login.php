@@ -14,8 +14,8 @@
         
         <div class="container">
             <h1>Login</h1>
-            <label for="name"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="name" required>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
 
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" required>

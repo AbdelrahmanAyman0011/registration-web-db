@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<form action="contact.php" method="post" onsubmit="return checkPasswords()">
+    <form action="contact.php" method="post" onsubmit="return validateForm()">
         <div class="container">
             <h1>Register</h1>      
             <label for="name"><b>Name</b></label>
@@ -31,21 +31,25 @@
         </div>
     </form>
 
-
     <script>
-function checkPasswords() {
-    var password = document.getElementById("password").value;
-    var passwordRepeat = document.getElementById("passwordRepeat").value;
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var passwordRepeat = document.getElementById("passwordRepeat").value;
+            var email = document.getElementById("email").value;
 
-    if (password === passwordRepeat) {
-        return true; // Passwords match, form submission allowed
-    } else {
-        alert("Passwords do not match. Please try again.");
-        return false; // Passwords don't match, prevent form submission
-    }
-}
-</script>
+            if (password !== passwordRepeat) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
 
+            return true;
+        }
+    </script>
 </body>
 
 </html>
