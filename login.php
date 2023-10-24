@@ -21,11 +21,11 @@
             <input type="password" placeholder="Enter Password" name="password" required>
 
             <button type="submit" name = "submit" class = "Loginbtn">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
+            <label>  <p>don't have an account ?   <a href="register.php">Sign up</a></p></p>
             </label>
-        </div>
+        
 
+        </div>
       
     </form>
 </body>
